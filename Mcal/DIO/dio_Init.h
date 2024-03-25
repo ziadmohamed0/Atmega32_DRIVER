@@ -12,14 +12,9 @@
 #include "dio_Reg.h"
 #include "../../Serv/Std_Types.h"
 #include "../../Serv/Bit_Math.h"
-
+#include <util/delay.h>
 /* -------------------- Section : Enums -------------------- */
-typedef enum{
-	PORTA = 0,
-	PORTB,
-	PORTC,
-	PORTD,
-}Ports;
+
 
 typedef enum{
 	PortA_p0 , PortA_p1 , PortA_p2 , PortA_p3 , PortA_p4 , PortA_p5 , PortA_p6 , PortA_p7,
@@ -28,6 +23,40 @@ typedef enum{
 	PortD_p0 , PortD_p1 , PortD_p2 , PortD_p3 , PortD_p4 , PortD_p5 , PortD_p6 , PortD_p7,
 }Pins;
 
+typedef enum{
+	p0 = 0,
+	p1,
+	p2,
+	p3,
+	p4,
+	p5,
+	p6,
+	p7
+}dio_Pins;
+
+typedef enum{
+	PORTA = 0,
+	PORTB,
+	PORTC,
+	PORTD,
+}Ports;
+
+typedef enum{
+	direction_Input = 0,
+	direction_Output
+}dio_Direction;
+
+typedef enum{
+	dio_Low = 0,
+	dio_High
+}dio_Value;
+
+/* -------------------- Section : Structes -------------------- */
+//typedef struct {
+//	u8 Pin  		;
+//	u8 Direction 	;
+//	u8 Value 		;
+//}Pin_Config;
 /* -------------------- Section : Macros -------------------- */
 #define	Status_Port_High		(u8)0xFF
 #define	Status_Port_Low			(u8)0x00
@@ -46,6 +75,7 @@ typedef enum{
 void Dio_setPinDir(u8 CopyPinNum,u8 CopyPinDir);
 void Dio_setPinVal(u8 CopyPinNum,u8 CopyPinVal);
 Std_Return Dio_getPinVal(u8 CopyPinNum);
+
 
 /* -------------------- Section : Ports Functions Declarations -------------------- */
 void Dio_setPortDir(u8 CopyPortNum,u8 CopyPinDir);

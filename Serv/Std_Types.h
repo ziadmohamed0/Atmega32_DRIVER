@@ -8,8 +8,6 @@
 #ifndef  TYPE_STDS_H_
 #define TYPE_STDS_H_
 
-#include <util/delay.h>
-
 /* ========== CPU_TUPES ========== */
 #define CPU_8_BIT   8
 #define CPU_16_BIT  16

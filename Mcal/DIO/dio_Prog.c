@@ -60,6 +60,8 @@ Std_Return Dio_getPinVal(u8 CopyPinNum)
 }
 
 
+
+
 /* -------------------- Section : Ports Functions Definaions -------------------- */
 void Dio_setPortDir(u8 CopyPortNum,u8 CopyPinDir)
 {

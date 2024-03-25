@@ -10,6 +10,8 @@ RM := rm -rf
 -include sources.mk
 -include Mcal/DIO/subdir.mk
 -include Hall/Led/subdir.mk
+-include Hall/LCD/subdir.mk
+-include Hall/DC_Motor/subdir.mk
 -include Hall/BCD/subdir.mk
 -include App/subdir.mk
 -include subdir.mk

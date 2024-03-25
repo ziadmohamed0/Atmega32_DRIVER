@@ -28,6 +28,8 @@ C_DEPS :=
 SUBDIRS := \
 App \
 Hall/BCD \
+Hall/DC_Motor \
+Hall/LCD \
 Hall/Led \
 Mcal/DIO \
 
