@@ -34,6 +34,8 @@
 #define Row_4	(u8)4
 
 /********** SECTION : Functions Declarations  8 Bit Mode **********/
+#if _LCD_Mood ==  _LCD_8_Bit_Mood
+
 void LCD_8_INIT(LCD_8_MODE CopyLCD);
 void LCD_8_CMD_Write(LCD_8_MODE CopyLCD , u8 CopyCMD);
 
@@ -44,6 +46,8 @@ void LCD_8_String_Write(LCD_8_MODE CopyLCD , u8 *CopySTR);
 void LCD_8_STR_Write_Postion(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 *CopySTR);
 
 /********** SECTION : Functions Declarations  4 Bit Mode **********/
+#elif _LCD_Mood == _LCD_4_Bit_Mood
+
 void LCD_4_INIT(LCD_4_MODE CopyLCD);
 void LCD_4_CMD_Write(LCD_4_MODE CopyLCD , u8 CopyCMD);
 
@@ -54,6 +58,7 @@ void LCD_4_Char_Postion(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 Cop
 void LCD_4_Str_Write(LCD_4_MODE CopyLCD , u8 *CopySTR);
 void LCD_4_STR_Postion(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 *CopySTR);
 
+#endif
 /********** SECTION : Functions Declarations Convert **********/
 void Convert_u8_to_String(u8 CopyValueu8 , u8 *CopySTR);
 void Convert_u16_to_String(u16 CopyValueu8 , u8 *CopySTR);

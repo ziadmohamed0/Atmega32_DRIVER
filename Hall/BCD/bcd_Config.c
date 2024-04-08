@@ -4,8 +4,10 @@
  *  Created on: Mar 23, 2024
  *      Author: ziad
  */
+/********** SECTION : Includes **********/
 #include "bcd_Config.h"
 
+/********** SECTION : Variable_Definations **********/
 BCD Seg_1 = {
 	.Pin_1 = PortA_p0,
 	.Pin_2 = PortA_p1,

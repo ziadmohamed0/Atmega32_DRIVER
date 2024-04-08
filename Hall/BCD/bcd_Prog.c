@@ -4,8 +4,11 @@
  *  Created on: Mar 17, 2024
  *      Author: ziad
  */
+
+/********** SECTION : Includes **********/
 #include "bcd_Init.h"
 
+/********** SECTION : Functions Definitions **********/
 void Bcd_7segInit(BCD Copy7seg)
 {
 	Dio_setPinDir(Copy7seg.Pin_1, Direction_Pin_Output);

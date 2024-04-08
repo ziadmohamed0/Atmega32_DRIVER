@@ -4,10 +4,11 @@
  *  Created on: Mar 22, 2024
  *      Author: ziad
  */
+/********** SECTION : Includes **********/
 #include "../../Mcal/DIO/dio_Init.h"
 #include "Dc_Motor_Init.h"
 
-
+/********** SECTION : Functions Definitions **********/
 void Motor_Init(void)
 {
 	Dio_setPinDir(m1.ENA, Direction_Pin_Output);

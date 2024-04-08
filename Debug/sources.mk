@@ -33,5 +33,6 @@ Hall/Initialize \
 Hall/KeyPad \
 Hall/LCD \
 Hall/Led \
+Hall/UltraSonic \
 Mcal/DIO \
 

@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Mcal/DIO/subdir.mk
+-include Hall/UltraSonic/subdir.mk
 -include Hall/Led/subdir.mk
 -include Hall/LCD/subdir.mk
 -include Hall/KeyPad/subdir.mk

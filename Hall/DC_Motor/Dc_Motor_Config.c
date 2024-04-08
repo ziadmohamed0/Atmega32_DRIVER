@@ -4,8 +4,10 @@
  *  Created on: Mar 22, 2024
  *      Author: ziad
  */
+/********** SECTION : Includes **********/
 #include "Dc_Motor_Config.h"
 
+/********** SECTION : Variable_Definations **********/
 motor1 m1 = {
 		.IN1 = PortB_p0,
 		.IN2 = PortB_p1,
