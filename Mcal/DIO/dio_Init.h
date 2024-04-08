@@ -13,6 +13,7 @@
 #include "../../Serv/Std_Types.h"
 #include "../../Serv/Bit_Math.h"
 #include <util/delay.h>
+#include <string.h>
 /* -------------------- Section : Enums -------------------- */
 
 
@@ -52,11 +53,11 @@ typedef enum{
 }dio_Value;
 
 /* -------------------- Section : Structes -------------------- */
-//typedef struct {
-//	u8 Pin  		;
-//	u8 Direction 	;
-//	u8 Value 		;
-//}Pin_Config;
+typedef struct {
+	u8 Pin  		;
+	u8 Direction 	;
+	u8 Value 		;
+}Pin_Config;
 /* -------------------- Section : Macros -------------------- */
 #define	Status_Port_High		(u8)0xFF
 #define	Status_Port_Low			(u8)0x00

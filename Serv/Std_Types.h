@@ -84,5 +84,6 @@ typedef	u8				Std_Return;
 #define R_Ok		(Std_Return)1
 #define R_Not_Ok	(Std_Return)0
 
+#define Initial_Counter	(u8)0
 
 #endif

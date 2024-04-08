@@ -4,34 +4,18 @@
  *  Created on: Mar 16, 2024
  *      Author: ziad
  */
-
+/********** SECTION : Includes **********/
 #include "Main_Init.h"
 
-
+/********** SECTION : Main Function **********/
 int main (void)
 {
-
-
-	Inzalizations();
+	App_Init();
 
 	while(1)
 	{
-		ProgLoop();
+		App_Loop();
 	}
 }
 
 
-
-
-void Inzalizations(void)
-{
-
-
-}
-
-void ProgLoop(void)
-{
-
-
-
-}
