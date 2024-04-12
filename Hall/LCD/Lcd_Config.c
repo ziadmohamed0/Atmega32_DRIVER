@@ -11,16 +11,16 @@
 /********** SECTION : Variable_Definations **********/
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
 LCD_8_MODE LCD_1 = {
-		.RS = PortC_p6,
-		.E  = PortC_p7,
-		.port[0] = PortD_p0,
-		.port[1] = PortD_p1,
-		.port[2] = PortD_p2,
-		.port[3] = PortD_p3,
-		.port[4] = PortD_p4,
-		.port[5] = PortD_p5,
-		.port[6] = PortD_p6,
-		.port[7] = PortD_p7
+		.RS = PortA_p6,
+		.E  = PortA_p7,
+		.port[0] = PortB_p0,
+		.port[1] = PortB_p1,
+		.port[2] = PortB_p2,
+		.port[3] = PortB_p3,
+		.port[4] = PortB_p4,
+		.port[5] = PortB_p5,
+		.port[6] = PortB_p6,
+		.port[7] = PortB_p7
 };
 
 #elif _LCD_Mood ==  _LCD_4_Bit_Mood

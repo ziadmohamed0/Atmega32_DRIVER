@@ -9,8 +9,7 @@
 #include "Initialize_Init.h"
 
 /********** SECTION : Globale Variable **********/
-
-
+u8 KeyPad_Value = 0;
 /********** SECTION : Functions setUp Definitions **********/
 void App_Init(void)
 {

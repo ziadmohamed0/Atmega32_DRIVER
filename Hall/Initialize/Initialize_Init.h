@@ -9,7 +9,6 @@
 #define HALL_INITIALIZE_INITIALIZE_INIT_H_
 
 /********** SECTION : Includes **********/
-#include "../Led/Led_Init.h"
 #include "../BCD/bcd_Init.h"
 #include "../DC_Motor/Dc_Motor_Init.h"
 #include "../LCD/Lcd_Init.h"

@@ -76,6 +76,8 @@ typedef struct {
 void Dio_setPinDir(u8 CopyPinNum,u8 CopyPinDir);
 void Dio_setPinVal(u8 CopyPinNum,u8 CopyPinVal);
 Std_Return Dio_getPinVal(u8 CopyPinNum);
+void DIO_vidSetPinSDir(u8 * u8PinsNum,u8 Copyu8Size,u8 Copyu8Dir);
+void DIO_vidSetPinSVal(u8 * u8PinsNum,u8 Copyu8Size,u8 Copyu8Val);
 
 
 /* -------------------- Section : Ports Functions Declarations -------------------- */

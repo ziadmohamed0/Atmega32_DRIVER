@@ -10,7 +10,7 @@
 
 /********** SECTION : Includes **********/
 #include "Dc_Motor_Config.h"
-
+#include "../../Mcal/External_Interrupt/External_Interrupts_Init.h"
 
 /********** SECTION : Functions Declarations **********/
 void Motor_Init(void);

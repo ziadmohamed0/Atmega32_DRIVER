@@ -19,15 +19,15 @@ u8 Keypad_Buttons[KeyPad_Rows][KeyPad_Coulmn] = {
 KeyPad KeyPad_1 = {
 
 				/* ----- Pins Rows ----- */
-				.Pins_Row[0] = PortA_p0,
-				.Pins_Row[1] = PortA_p1,
-				.Pins_Row[2] = PortA_p2,
-				.Pins_Row[3] = PortA_p3,
+				.Pins_Row[0] = PortC_p4,
+				.Pins_Row[1] = PortC_p5,
+				.Pins_Row[2] = PortC_p6,
+				.Pins_Row[3] = PortC_p7,
 
 				/* ----- Pins Column ----- */
-				.Pins_Coulmn[0] = PortA_p4,
-				.Pins_Coulmn[1] = PortA_p5,
-				.Pins_Coulmn[2] = PortA_p6,
-				.Pins_Coulmn[3] = PortA_p7,
+				.Pins_Coulmn[0] = PortC_p0,
+				.Pins_Coulmn[1] = PortC_p1,
+				.Pins_Coulmn[2] = PortC_p2,
+				.Pins_Coulmn[3] = PortC_p3,
 
 };

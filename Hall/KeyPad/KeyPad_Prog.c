@@ -17,6 +17,7 @@ void KeyPad_Init(KeyPad CopyKeyPad)
 	for(Rows_Counter = Initial_Counter ; Rows_Counter < KeyPad_Rows; Rows_Counter++)
 	{
 		Dio_setPinDir(CopyKeyPad.Pins_Row[Rows_Counter],Direction_Pin_Output);
+//		Dio_setPinVal(CopyKeyPad.Pins_Row[Rows_Counter], Status_Pin_Low);
 	}
 
 	for(Columns_Counter = Initial_Counter ; Columns_Counter < KeyPad_Coulmn; Columns_Counter++)
@@ -25,7 +26,7 @@ void KeyPad_Init(KeyPad CopyKeyPad)
 	}
 }
 
-void KeyPad_getValue(KeyPad CopyKeyPad, u8 CopyValue)
+void KeyPad_getValue(KeyPad CopyKeyPad, u8 *CopyValue)
 {
 	u8 Rows_Counter = Initial_Counter ;
 	u8 Columns_Counter = Initial_Counter;
@@ -40,14 +41,15 @@ void KeyPad_getValue(KeyPad CopyKeyPad, u8 CopyValue)
 		}
 
 		Dio_setPinVal(CopyKeyPad.Pins_Row[Rows_Counter], Status_Pin_High);
-		_delay_ms(10);
-
+		_delay_ms(50);
 		for(Columns_Counter = Initial_Counter ; Columns_Counter < KeyPad_Coulmn; Columns_Counter++)
 		{
-			Logic_Value = Dio_getPinVal(CopyKeyPad.Pins_Coulmn[Columns_Counter]);
+			Dio_getPinVal(CopyKeyPad.Pins_Coulmn[Columns_Counter]);
+			_delay_ms(50);
+
 			if(Logic_Value == Status_Pin_High)
 			{
-				CopyValue = Keypad_Buttons[Rows_Counter][Columns_Counter];
+				*CopyValue = &(Keypad_Buttons[Rows_Counter][Columns_Counter]);
 			}
 		}
 	}
