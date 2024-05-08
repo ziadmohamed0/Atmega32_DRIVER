@@ -11,6 +11,4 @@
 /********** SECTION : Includes **********/
 #include "../Hall/Initialize/Initialize_Init.h"
 
-
-
 #endif /* APP_MAIN_INIT_H_ */

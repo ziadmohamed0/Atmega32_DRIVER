@@ -12,11 +12,10 @@
 #include "dio_Reg.h"
 #include "../../Serv/Std_Types.h"
 #include "../../Serv/Bit_Math.h"
-#include <util/delay.h>
-#include <string.h>
+#include "../../Serv/Includes.h"
+#include "../ADC/ADC_Init.h"
+
 /* -------------------- Section : Enums -------------------- */
-
-
 typedef enum{
 	PortA_p0 , PortA_p1 , PortA_p2 , PortA_p3 , PortA_p4 , PortA_p5 , PortA_p6 , PortA_p7,
 	PortB_p0 , PortB_p1 , PortB_p2 , PortB_p3 , PortB_p4 , PortB_p5 , PortB_p6 , PortB_p7,
@@ -36,10 +35,10 @@ typedef enum{
 }dio_Pins;
 
 typedef enum{
-	PORTA = 0,
-	PORTB,
-	PORTC,
-	PORTD,
+	PORTA_reg = 0,
+	PORTB_reg,
+	PORTC_reg,
+	PORTD_reg,
 }Ports;
 
 typedef enum{

@@ -10,12 +10,11 @@
 
 /********** SECTION : Includes **********/
 #include "Dc_Motor_Config.h"
-#include "../../Mcal/External_Interrupt/External_Interrupts_Init.h"
 
 /********** SECTION : Functions Declarations **********/
-void Motor_Init(void);
-void Motor_Forward(u8 CopyMotorNum);
-void Motor_Reverse(u8 CopyMotorNum);
-void Motor_Off(u8 CopyMotorNum);
+void Motor_2_Motors_Init(motor1 CopyMotor_1,motor2 CopyMotor_2);
+void Motor_2_Motors_Forward(motor1 CopyMotor_1,motor2 CopyMotor_2);
+void Motor_2_Motors_Reverse(motor1 CopyMotor_1,motor2 CopyMotor_2);
+void Motor_2_Motors_Off(motor1 CopyMotor_1,motor2 CopyMotor_2);
 
 #endif /* HALL_DC_MOTOR_DC_MOTOR_INIT_H_ */

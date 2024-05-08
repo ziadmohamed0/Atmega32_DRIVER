@@ -10,7 +10,6 @@
 
 /********** SECTION : Includes **********/
 #include "KeyPad_Config.h"
-#include "../../Mcal/External_Interrupt/External_Interrupts_Init.h"
 
 /********** SECTION : Functions Declarations **********/
 void KeyPad_Init(KeyPad CopyKeyPad);

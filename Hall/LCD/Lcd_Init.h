@@ -9,9 +9,7 @@
 #define HALL_LCD_LCD_INIT_H_
 
 /********** SECTION : Includes **********/
-#include "../../Mcal/DIO/dio_Init.h"
 #include "Lcd_Config.h"
-#include "../../Mcal/External_Interrupt/External_Interrupts_Init.h"
 
 /********** SECTION : MACROS **********/
 #define _LCD_Clear_Dis					(u8)0x01

@@ -8,6 +8,7 @@
 #ifndef SERV_BIT_MATH_H_
 #define SERV_BIT_MATH_H_
 
+/* ========== Bit Math Macros ========== */
 #define CLR_BIT(reg,bit)      reg &= ~ (1 << bit)	//	Clear Bit In Any Register
 #define SET_BIT(reg,bit)      reg |=   (1 << bit)	//	Set Bit In Any Register
 #define TOGGLE_BIT(reg,bit)   reg ^=   (1 << bit)	//	Toggle Bit In Any Register

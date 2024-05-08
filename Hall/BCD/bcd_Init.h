@@ -9,9 +9,7 @@
 #define HALL_BCD_BCD_INIT_H_
 
 /* -------------------- Section : Includes -------------------- */
-#include "../../Mcal/DIO/dio_Init.h"
 #include "bcd_Config.h"
-#include "../../Mcal/External_Interrupt/External_Interrupts_Init.h"
 
 /* -------------------- Section : Function Declarations -------------------- */
 void Bcd_7segInit(BCD Copy7seg);
