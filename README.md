@@ -9,7 +9,7 @@ This repository contains a comprehensive suite of drivers for the ATmega32 micro
 - **Hall**: This folder contains higher abstraction layer drivers.
   - `lcd`: Driver for interfacing with LCD displays.
   - `bcd`: Driver for interfacing with 7-Segment displays.
-  - `ultrasonic sensor`: Driver for ultrasonic distance measurement.
+  - `ultrasonic`: Driver for ultrasonic distance measurement.
   - `keypad`: Driver for matrix keypad interfacing.
   - `dc_Motor`: Driver for controlling DC motors.
   - `Initialize`: Driver for Connects all interfaces together.
