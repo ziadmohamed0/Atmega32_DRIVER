@@ -14,6 +14,7 @@ This repository contains a comprehensive suite of drivers for the ATmega32 micro
   - `ultrasonic sensor`: Driver for ultrasonic distance measurement.
   - `keypad`: Driver for matrix keypad interfacing.
   - `dc_Motor`: Driver for controlling DC motors.
+  - `Initialize`: Driver for Connects all interfaces together.
 
 - **Mcal**: Microcontroller abstraction layer drivers.
   - `ADC`: Analog-to-digital converter driver.
