@@ -11,7 +11,6 @@ RM := rm -rf
 -include Mcal/EX_Intrrupt/subdir.mk
 -include Mcal/DIO/subdir.mk
 -include Mcal/ADC/subdir.mk
--include Hall/UltraSonic/subdir.mk
 -include Hall/LCD/subdir.mk
 -include Hall/KeyPad/subdir.mk
 -include Hall/Initialize/subdir.mk

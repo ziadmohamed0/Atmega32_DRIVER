@@ -9,6 +9,11 @@
 #include "bcd_Init.h"
 
 /********** SECTION : Functions Definitions **********/
+
+/**
+  * @brief  : Initialization 7-segment With BCD
+  * @param  : Copy7seg
+  */
 void Bcd_7segInit(BCD Copy7seg)
 {
 	Dio_setPinDir(Copy7seg.Pin_1, Direction_Pin_Output);
@@ -17,6 +22,11 @@ void Bcd_7segInit(BCD Copy7seg)
 	Dio_setPinDir(Copy7seg.Pin_4, Direction_Pin_Output);
 }
 
+/**
+  * @brief  : Write Number in 7-segment With BCD
+  * @param  : Copy7segNum
+  * @param  : CopyNumber
+  */
 void Bcd_7segWriteNum(BCD Copy7segNum , u8 CopyNumber)
 {
 	switch (CopyNumber) {
@@ -85,18 +95,23 @@ void Bcd_7segWriteNum(BCD Copy7segNum , u8 CopyNumber)
 	}
 }
 
+#if (Multiplexing == Multiplexing_2)
+/**
+  * @brief  :  Set or Clear Enable Pins & Select Type Of 2 Multiplexing 7-segment
+  * @param  : Copy7segNum
+  * @param  : CopyNumber
+  */
 void Bcd_MPX_2Enable(MPX_2_Enables CopyPinsEnable, u8 CopyCommonType, u8 CopyStatus)
 {
 	if(CopyStatus == Enable){
 		switch (CopyCommonType) {
 			case Common_Anode :
-
-				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High);
-				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High);
+				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High); //1 = 1
+				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High); //2 = 1
 				break;
 			case Common_Cathod :
-				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low);
-				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low);
+				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low); //1 = 0
+				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low); //2 = 0
 				break;
 			default:
 				break;
@@ -105,13 +120,12 @@ void Bcd_MPX_2Enable(MPX_2_Enables CopyPinsEnable, u8 CopyCommonType, u8 CopySta
 	else if (CopyStatus == Disable){
 		switch (CopyCommonType) {
 			case Common_Anode :
-
-				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low);
-				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low);
+				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low); //1 = 0
+				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low); //2 = 0
 				break;
 			case Common_Cathod :
-				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High);
-				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High);
+				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High); //1 = 1
+				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High); //2 = 1
 				break;
 			default:
 				break;
@@ -119,12 +133,18 @@ void Bcd_MPX_2Enable(MPX_2_Enables CopyPinsEnable, u8 CopyCommonType, u8 CopySta
 	}
 	else{}
 }
+
+#elif (Multiplexing == Multiplexing_4)
+/**
+  * @brief  :  Set or Clear Enable Pins & Select Type Of 4 Multiplexing 7-segment
+  * @param  : Copy7segNum
+  * @param  : CopyNumber
+  */
 void Bcd_MPX_4Enable(MPX_4_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopyStatus)
 {
 	if(CopyStatus == Enable){
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_High);
@@ -144,7 +164,6 @@ void Bcd_MPX_4Enable(MPX_4_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	{
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_Low);
@@ -162,12 +181,18 @@ void Bcd_MPX_4Enable(MPX_4_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	}
 	else{}
 }
+
+#elif (Multiplexing == Multiplexing_6)
+/**
+  * @brief  :  Set or Clear Enable Pins & Select Type Of 6 Multiplexing 7-segment
+  * @param  : Copy7segNum
+  * @param  : CopyNumber
+  */
 void Bcd_MPX_6Enable(MPX_6_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopyStatus)
 {
 	if(CopyStatus == Enable){
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_High);
@@ -191,7 +216,6 @@ void Bcd_MPX_6Enable(MPX_6_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	{
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_Low);
@@ -213,12 +237,18 @@ void Bcd_MPX_6Enable(MPX_6_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	}
 	else{}
 }
+
+#elif (Multiplexing == Multiplexing_8)
+/**
+  * @brief  :  Set or Clear Enable Pins & Select Type Of 8 Multiplexing 7-segment
+  * @param  : Copy7segNum
+  * @param  : CopyNumber
+  */
 void Bcd_MPX_8Enable(MPX_8_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopyStatus)
 {
 	if(CopyStatus == Enable){
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_High);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_High);
@@ -246,7 +276,6 @@ void Bcd_MPX_8Enable(MPX_8_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	{
 		switch (CopyCommonType) {
 			case Common_Anode :
-
 				Dio_setPinVal(CopyPinsEnable.EN_1, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_2, Status_Pin_Low);
 				Dio_setPinVal(CopyPinsEnable.EN_3, Status_Pin_Low);
@@ -272,6 +301,5 @@ void Bcd_MPX_8Enable(MPX_8_Enables CopyPinsEnable , u8 CopyCommonType, u8 CopySt
 	}
 	else{}
 }
-
-
+#endif
 

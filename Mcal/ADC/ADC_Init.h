@@ -14,7 +14,7 @@
 #include "../../Serv/Includes.h"
 #include "ADC_Config.h"
 
-/* -------------------- Section : Enums -------------------- */
+/* -------------------- Section : ADC CHANNELS  -------------------- */
 typedef enum
 {
 	ADC_CHANNEL1,
@@ -28,14 +28,42 @@ typedef enum
 }ADC_CHANNEL;
 
 /* -------------------- Section : Functions -------------------- */
+
+/**
+  * @brief  : Initialization ADC
+  */
 void ADC_INIT(void);
-u8 ADC_readDigitalSignal(ADC_CHANNEL CopyChanal);
+
+/**
+  * @brief  : Conversion Digital Signal to Analog Signal And Return The Result
+  * @param  : CopyChanal
+  * @retval : Res
+  */
+u16 ADC_readDigitalSignal(ADC_CHANNEL CopyChanal);
+
+/**
+  * @brief  : Enable ADC
+  */
 void ADC_Enable(void);
+
+/**
+  * @brief  : Disable ADC
+  */
 void ADC_Disable(void);
 
+/**
+  * @brief  : Enable Interrupt of ADC
+  */
 void ADC_EnableINT(void);
+
+/**
+  * @brief  : Disable Interrupt of ADC
+  */
 void ADC_DisableINT(void);
 
+/**
+  * @brief  : Clear The ADCSRA_ADIF Bit
+  */
 void ADC_CLRflag(void);
 
 #endif /* MCAL_ADC_ADC_INIT_H_ */

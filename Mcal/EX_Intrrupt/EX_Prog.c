@@ -9,29 +9,50 @@
 #include "EX_Init.h"
 #include "../DIO/dio_Init.h"
 /* -------------------- Section : Static Functions -------------------- */
+
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {0}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN0(EX_Interrupt_Dir CopyDirIn);
+
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {1}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN1(EX_Interrupt_Dir CopyDirIn);
+
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {2}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN2(EX_Interrupt_Dir CopyDirIn);
 
 /* -------------------- Section : Functions -------------------- */
+
+/**
+  * @brief  : Initialization External Interrupt
+  * @param  : CopyNumEXI
+  * @param  : CopyDirIn
+  */
 void EXI_Init(EX_Interrupt_Num CopyNumEXI , EX_Interrupt_Dir CopyDirIn)
 {
 	switch (CopyNumEXI) {
 		case IN0:
-			SET_BIT(SREG,SREG_GIE);
-			SET_BIT(GICR , GICR_INT0);
+			SET_BIT(SREG,SREG_GIE);		// Enable General Interrupt Register
+			SET_BIT(GICR , GICR_INT0);	// Enable Local Interrupt Register of INT0
 			EX_ControlIN0(CopyDirIn);
 			Dio_setPinDir(PortD_p2,Direction_Pin_Input);
 			break;
 		case IN1:
-			SET_BIT(SREG,SREG_GIE);
-			SET_BIT(GICR , GICR_INT1);
+			SET_BIT(SREG,SREG_GIE);		// Enable General Interrupt Register
+			SET_BIT(GICR , GICR_INT1);	// Enable Local Interrupt Register of INT1
 			EX_ControlIN1(CopyDirIn);
 			Dio_setPinDir(PortD_p3,Direction_Pin_Input);
 			break;
 		case IN2:
-			SET_BIT(SREG,SREG_GIE);
-			SET_BIT(GICR , GICR_INT2);
+			SET_BIT(SREG,SREG_GIE);		// Enable General Interrupt Register
+			SET_BIT(GICR , GICR_INT2);	// Enable Local Interrupt Register of INT2
 			EX_ControlIN2(CopyDirIn);
 			Dio_setPinDir(PortB_p3,Direction_Pin_Input);
 			break;
@@ -39,6 +60,11 @@ void EXI_Init(EX_Interrupt_Num CopyNumEXI , EX_Interrupt_Dir CopyDirIn)
 }
 
 /* -------------------- Section : Static Functions -------------------- */
+
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {0}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN0(EX_Interrupt_Dir CopyDirIn)
 {
 	switch (CopyDirIn) {
@@ -61,6 +87,10 @@ static void EX_ControlIN0(EX_Interrupt_Dir CopyDirIn)
 	}
 }
 
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {1}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN1(EX_Interrupt_Dir CopyDirIn)
 {
 	switch (CopyDirIn)
@@ -84,6 +114,10 @@ static void EX_ControlIN1(EX_Interrupt_Dir CopyDirIn)
 		}
 }
 
+/**
+  * @brief  : Static Function Control Direction of External Interrupt {2}
+  * @param  : CopyDirIn
+  */
 static void EX_ControlIN2(EX_Interrupt_Dir CopyDirIn)
 {
 	switch (CopyDirIn)

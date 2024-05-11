@@ -11,17 +11,23 @@
 /* -------------------- Section : Includes -------------------- */
 #include "EX_Config.h"
 
-/* -------------------- Section : Macros Like Functions -------------------- */
+/* -------------------- Section : ISR Macros Like Functions -------------------- */
 #define ISR(vector)            \
     void vector (void)  __attribute__ ((signal,used, externally_visible)); \
     void vector (void)
 
-/* -------------------- Section : Macros Vectors -------------------- */
+/* -------------------- Section : External Interrupt Vectors -------------------- */
 #define INT0_VECTR    __vector_1
 #define INT1_VECTR    __vector_2
 #define INT2_VECTR    __vector_3
 
 /* -------------------- Section : Functions -------------------- */
+
+/**
+  * @brief  : Initialization External Interrupt
+  * @param  : CopyNumEXI
+  * @param  : CopyDirIn
+  */
 void EXI_Init(EX_Interrupt_Num CopyNumEXI , EX_Interrupt_Dir CopyDirIn);
 
 

@@ -14,6 +14,8 @@
 #include "../../Serv/Includes.h"
 #include "EX_Reg.h"
 /* -------------------- Section : Enums -------------------- */
+
+/* ========== Pins of External Interrupt ========== */
 typedef enum
 {
 	IN0,
@@ -21,6 +23,8 @@ typedef enum
 	IN2
 }EX_Interrupt_Num;
 
+
+/* ========== Directions of External Interrupt ========== */
 typedef enum
 {
 	LOW_LEVEL,

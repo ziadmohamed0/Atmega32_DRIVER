@@ -26,7 +26,6 @@ Hall/DC_Motor \
 Hall/Initialize \
 Hall/KeyPad \
 Hall/LCD \
-Hall/UltraSonic \
 Mcal/ADC \
 Mcal/DIO \
 Mcal/EX_Intrrupt \

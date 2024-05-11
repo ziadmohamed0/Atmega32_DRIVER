@@ -15,6 +15,7 @@
 #include "../KeyPad/KeyPad_Init.h"
 
 /**********  Section : Function Declarations **********/
+
 void App_Init(void);
 void App_Loop(void);
 

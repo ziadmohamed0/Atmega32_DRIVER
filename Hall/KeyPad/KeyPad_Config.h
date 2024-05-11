@@ -11,17 +11,17 @@
 /********** SECTION : Includes **********/
 #include "../../Mcal/DIO/dio_Init.h"
 
-/********** SECTION : Macros **********/
+/********** SECTION : Pins Size **********/
 #define KeyPad_Rows		4
 #define KeyPad_Coulmn	4
 
-/********** SECTION : Structs **********/
+/********** SECTION : Pins **********/
 typedef struct {
 	u8 Pins_Row[KeyPad_Rows];
 	u8 Pins_Coulmn[KeyPad_Coulmn];
 }KeyPad;
 
-/********** SECTION : Variables Declarations **********/
+/********** SECTION : KeyPad Configurations **********/
 KeyPad KeyPad_1;
 u8 Keypad_Buttons[KeyPad_Rows][KeyPad_Coulmn];
 

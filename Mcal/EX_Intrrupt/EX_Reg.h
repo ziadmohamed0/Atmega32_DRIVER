@@ -29,7 +29,7 @@
 #define GICR_INT2   5
 
 
-#define SREG_GIE   7
+#define SREG_GIE   7	//General Interrupt Bit
 
 
 #endif /* MCAL_EX_INTRRUPT_EX_REG_H_ */

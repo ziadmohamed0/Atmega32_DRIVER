@@ -8,9 +8,9 @@
 /********** SECTION : Includes **********/
 #include "Lcd_Config.h"
 
-/********** SECTION : Variable_Definations **********/
+/********** SECTION : LCDs **********/
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
-LCD_8_MODE LCD_1 = {
+LCD_8_MODE LCD8 = {
 
 		.port[0] = PortA_p0,
 		.port[1] = PortA_p1,
@@ -26,14 +26,14 @@ LCD_8_MODE LCD_1 = {
 
 #elif _LCD_Mood ==  _LCD_4_Bit_Mood
 
-LCD_4_MODE LCD_2 = {
+LCD_4_MODE LCD4 = {
 
-		.Port[0] = PortA_p0,
-		.Port[1] = PortA_p1,
-		.Port[2] = PortA_p2,
-		.Port[3] = PortA_p3,
-		.RS = PortA_p4,
-		.E  = PortA_p5,
+		.Port[0] = PortB_p4,
+		.Port[1] = PortB_p5,
+		.Port[2] = PortB_p6,
+		.Port[3] = PortB_p7,
+		.RS = PortB_p2,
+		.E  = PortB_p3,
 };
 
 #endif

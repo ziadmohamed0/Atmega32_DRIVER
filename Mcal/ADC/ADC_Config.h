@@ -12,7 +12,7 @@
 #include "../EX_Intrrupt/EX_Init.h"
 #include "ADC_Reg.h"
 
-/* -------------------- Section : Bits -------------------- */
+/* -------------------- Section : Voltage Reference Configuration -------------------- */
 #define ADC_AREF	0
 #define ADC_AVCC	1
 #define ADC_Inter	2
@@ -21,7 +21,7 @@
 /* -------------------- Section : ADC Clear -------------------- */
 #define ADC_CLEAR_MASK  (u8)0xE0
 
-/* -------------------- Section : ADC PRESCALER -------------------- */
+/* -------------------- Section : ADC PRESCALER Configuration -------------------- */
 #define ADC_DIVISION_FACTOR_2        (u8)0x01
 #define ADC_DIVISION_FACTOR_4        (u8)0x02
 #define ADC_DIVISION_FACTOR_8        (u8)0x03

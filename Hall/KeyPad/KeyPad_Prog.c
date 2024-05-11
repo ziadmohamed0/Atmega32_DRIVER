@@ -9,6 +9,11 @@
 #include "KeyPad_Init.h"
 
 /********** SECTION : Functions Definitions **********/
+
+/**
+  * @brief  : Initialization KeyPad Pins
+  * @param  : CopyKeyPad
+  */
 void KeyPad_Init(KeyPad CopyKeyPad)
 {
 	u8 Rows_Counter = Initial_Counter ;
@@ -26,6 +31,11 @@ void KeyPad_Init(KeyPad CopyKeyPad)
 	}
 }
 
+/**
+  * @brief  : Get Value From KeyPad Pins And Store It In CopyValue
+  * @param  : CopyKeyPad
+  * @param  : CopyValue
+  */
 void KeyPad_getValue(KeyPad CopyKeyPad, u8 *CopyValue)
 {
 	u8 Rows_Counter = Initial_Counter ;

@@ -7,7 +7,8 @@
 /********** SECTION : Includes **********/
 #include "KeyPad_Config.h"
 
-/********** SECTION : Variables Definitions **********/
+/********** SECTION : KeyPad Configurations **********/
+
 u8 Keypad_Buttons[KeyPad_Rows][KeyPad_Coulmn] = {
 							 						{'7','8','9','/'},
 							 						{'4','5','6','x'},

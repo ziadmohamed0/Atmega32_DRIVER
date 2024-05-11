@@ -11,14 +11,14 @@
 /********** SECTION : Includes **********/
 #include "../../Mcal/DIO/dio_Init.h"
 
-/********** SECTION : Macros **********/
+/********** SECTION : LCD MODES **********/
 
 #define _LCD_8_Bit_Mood	0
 #define _LCD_4_Bit_Mood	1
 
 #define _LCD_Mood	_LCD_4_Bit_Mood
 
-/********** SECTION : STRUCTS **********/
+/********** SECTION : Pins Configuration **********/
 
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
 typedef struct {
@@ -36,12 +36,12 @@ typedef struct {
 
 #endif
 
-/********** SECTION : VARIABLES **********/
+/********** SECTION : LCDs **********/
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
-LCD_8_MODE LCD_1;
+LCD_8_MODE LCD8;
 
 #elif _LCD_Mood == _LCD_4_Bit_Mood
-LCD_4_MODE LCD_2;
+LCD_4_MODE LCD4;
 
 #endif
 #endif /* HALL_LCD_LCD_CONFIG_H_ */

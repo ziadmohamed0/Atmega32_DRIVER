@@ -10,7 +10,8 @@
 
 /********** SECTION : Includes **********/
 #include "../../Mcal/DIO/dio_Init.h"
-/********** SECTION : STRUCTS **********/
+
+/********** SECTION : Motors Pins **********/
 typedef struct{
 	u8 IN1;
 	u8 IN2;
@@ -23,7 +24,7 @@ typedef struct{
 	u8 ENB;
 }motor2;
 
-/********** SECTION : VARIABLES **********/
+/********** SECTION : Motors **********/
 motor1 m1;
 motor2 m2;
 

@@ -10,13 +10,41 @@
 /********** SECTION : Functions Declarations **********/
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
 
+/**
+  * @brief  : Static Function To Send Enable Signal
+  * @param  : CopyLCD
+  */
 static void LCD_8_SendEnable_Signal(LCD_8_MODE CopyLCD);
+
+/**
+  * @brief  : Static Function To Set Cursor in LCD 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  */
 static void LCD_8_SetCursor_Position(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn);
 
 #elif _LCD_Mood == _LCD_4_Bit_Mood
 
+/**
+  * @brief  : Static Function To Get Data of LCD 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyCMD
+  */
 static void LCD_4_GetData(LCD_4_MODE CopyLCD , u8 CopyCMD);
+
+/**
+  * @brief  : Static Function To Send Enable Signal
+  * @param  : CopyLCD
+  */
 static void LCD_4_SendEnable_Signal(LCD_4_MODE CopyLCD);
+
+/**
+  * @brief  : Static Function To Set Cursor in LCD 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  */
 static void LCD_4_SetCursor_Position(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn);
 #endif
 
@@ -26,6 +54,10 @@ static void LCD_4_SetCursor_Position(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCo
 /********** SECTION : Functions Definitions 8 Bit Mode **********/
 #if _LCD_Mood ==  _LCD_8_Bit_Mood
 
+/**
+  * @brief  : Initialization Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  */
 void LCD_8_INIT(LCD_8_MODE CopyLCD)
 {
 	u8 Counter = Initial_Counter;
@@ -49,6 +81,11 @@ void LCD_8_INIT(LCD_8_MODE CopyLCD)
 	LCD_8_CMD_Write(CopyLCD, 0x80);
 }
 
+/**
+  * @brief  : Write Command in Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyCMD
+  */
 void LCD_8_CMD_Write(LCD_8_MODE CopyLCD , u8 CopyCMD)
 {
 	u8 Counter = Initial_Counter;
@@ -61,6 +98,11 @@ void LCD_8_CMD_Write(LCD_8_MODE CopyLCD , u8 CopyCMD)
 	LCD_8_SendEnable_Signal(CopyLCD);
 }
 
+/**
+  * @brief  : Write Character in first address in Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyChar
+  */
 void LCD_8_Char_Write(LCD_8_MODE CopyLCD , u8 CopyChar)
 {
 	u8 Counter = Initial_Counter;
@@ -73,12 +115,24 @@ void LCD_8_Char_Write(LCD_8_MODE CopyLCD , u8 CopyChar)
 	LCD_8_SendEnable_Signal(CopyLCD);
 }
 
+/**
+  * @brief  : Write Character in CopyRow in CopyCoulmn on Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  * @param  : CopyChar
+  */
 void LCD_8_Char_Postion(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 CopyChar)
 {
 	LCD_8_SetCursor_Position(CopyLCD , CopyRow , CopyCoulmn);
 	LCD_8_Char_Write(CopyLCD , CopyChar);
 }
 
+/**
+  * @brief  : Write String in first address in Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopySTR
+  */
 void LCD_8_String_Write(LCD_8_MODE CopyLCD , u8 *CopySTR)
 {
 	while(*CopySTR)
@@ -86,6 +140,14 @@ void LCD_8_String_Write(LCD_8_MODE CopyLCD , u8 *CopySTR)
 		LCD_8_Char_Write(CopyLCD, *CopySTR++);
 	}
 }
+
+/**
+  * @brief  : Write String in CopyRow in CopyCoulmn on Lcd 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  * @param  : CopySTR
+  */
 void LCD_8_STR_Write_Postion(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 *CopySTR)
 {
 	LCD_8_SetCursor_Position(CopyLCD , CopyRow , CopyCoulmn);
@@ -96,12 +158,15 @@ void LCD_8_STR_Write_Postion(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u
 }
 
 
-/************************************************************************************************************************/
 
-
-/********** SECTION : Functions Definitions 4 Bit Mode **********/
 #elif _LCD_Mood == _LCD_4_Bit_Mood
 
+/********** SECTION : Functions Definitions 4 Bit Mode **********/
+
+/**
+  * @brief  : Initialization Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  */
 void LCD_4_INIT(LCD_4_MODE CopyLCD)
 {
 	u8 Counter = Initial_Counter;
@@ -127,6 +192,11 @@ void LCD_4_INIT(LCD_4_MODE CopyLCD)
 	LCD_4_CMD_Write(CopyLCD, 0x80);
 }
 
+/**
+  * @brief  : Write Command in Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyCMD
+  */
 void LCD_4_CMD_Write(LCD_4_MODE CopyLCD , u8 CopyCMD)
 {
 	Dio_setPinVal(CopyLCD.RS , Status_Pin_Low);
@@ -136,6 +206,11 @@ void LCD_4_CMD_Write(LCD_4_MODE CopyLCD , u8 CopyCMD)
 	LCD_4_SendEnable_Signal(CopyLCD);
 }
 
+/**
+  * @brief  : Write Character in first address in Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyChar
+  */
 void LCD_4_Char_Write(LCD_4_MODE CopyLCD , u8 CopyChar)
 {
 	Dio_setPinVal(CopyLCD.RS , Status_Pin_High);
@@ -145,12 +220,24 @@ void LCD_4_Char_Write(LCD_4_MODE CopyLCD , u8 CopyChar)
 	LCD_4_SendEnable_Signal(CopyLCD);
 }
 
+/**
+  * @brief  : Write Character in CopyRow in CopyCoulmn on Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  * @param  : CopyChar
+  */
 void LCD_4_Char_Postion(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 CopyChar)
 {
 	LCD_4_SetCursor_Position(CopyLCD , CopyRow , CopyCoulmn);
 	LCD_4_Char_Write(CopyLCD , CopyChar);
 }
 
+/**
+  * @brief  : Write String in first address in Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopySTR
+  */
 void LCD_4_Str_Write(LCD_4_MODE CopyLCD , u8 *CopySTR)
 {
 	while(*CopySTR)
@@ -159,6 +246,13 @@ void LCD_4_Str_Write(LCD_4_MODE CopyLCD , u8 *CopySTR)
 	}
 }
 
+/**
+  * @brief  : Write String in CopyRow in CopyCoulmn on Lcd 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  * @param  : CopySTR
+  */
 void LCD_4_STR_Postion(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 *CopySTR)
 {
 	LCD_4_SetCursor_Position(CopyLCD , CopyRow , CopyCoulmn);
@@ -168,32 +262,53 @@ void LCD_4_STR_Postion(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn , u8 *Cop
 	}
 }
 #endif
-/************************************************************************************************************************/
+
 
 /********** SECTION : Functions Declarations Convert **********/
 
+/**
+  * @brief  : Conversion Number To String And Store String In CopySTR (Array)
+  * @param  : CopyValueu8
+  * @param  : CopySTR
+  */
 void Convert_u8_to_String(u8 CopyValueu8 , u8 *CopySTR)
 {
 	memset(CopySTR , '\0' , 4);
 	sprintf(CopySTR , "%i", CopyValueu8);
 }
-void Convert_u16_to_String(u16 CopyValueu8 , u8 *CopySTR)
+
+/**
+  * @brief  : Conversion Number To String And Store String In CopySTR (Array)
+  * @param  : CopyValueu16
+  * @param  : CopySTR
+  */
+void Convert_u16_to_String(u16 CopyValueu16 , u8 *CopySTR)
 {
 	memset(CopySTR , '\0' , 6);
-	sprintf(CopySTR , "%i", CopyValueu8);
-}
-void Convert_u32_to_String(u32 CopyValueu8 , u8 *CopySTR)
-{
-	memset(CopySTR , '\0' , 11);
-	sprintf(CopySTR , "%i", CopyValueu8);
+	sprintf(CopySTR , "%i", CopyValueu16);
 }
 
-/************************************************************************************************************************/
+/**
+  * @brief  : Conversion Number To String And Store String In CopySTR (Array)
+  * @param  : CopyValueu32
+  * @param  : CopySTR
+  */
+void Convert_u32_to_String(u32 CopyValueu32 , u8 *CopySTR)
+{
+	memset(CopySTR , '\0' , 11);
+	sprintf(CopySTR , "%i", CopyValueu32);
+}
+
 
 
 /********** SECTION : Static Functions **********/
 #if _LCD_Mood ==  _LCD_4_Bit_Mood
 
+/**
+  * @brief  : Static Function To Get Data of LCD 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyCMD
+  */
 static void LCD_4_GetData(LCD_4_MODE CopyLCD , u8 CopyCMD)
 {
 	Dio_setPinVal(CopyLCD.Port[0] , (CopyCMD >> 0) & (u8)0x01);
@@ -202,6 +317,10 @@ static void LCD_4_GetData(LCD_4_MODE CopyLCD , u8 CopyCMD)
 	Dio_setPinVal(CopyLCD.Port[3] , (CopyCMD >> 3) & (u8)0x01);
 }
 
+/**
+  * @brief  : Static Function To Send Enable Signal
+  * @param  : CopyLCD
+  */
 static void LCD_4_SendEnable_Signal(LCD_4_MODE CopyLCD)
 {
 	Dio_setPinVal(CopyLCD.E,Status_Pin_High);
@@ -209,6 +328,12 @@ static void LCD_4_SendEnable_Signal(LCD_4_MODE CopyLCD)
 	Dio_setPinVal(CopyLCD.E, Status_Pin_Low);
 }
 
+/**
+  * @brief  : Static Function To Set Cursor in LCD 4 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  */
 static void LCD_4_SetCursor_Position(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn)
 {
 	CopyCoulmn--;
@@ -223,6 +348,10 @@ static void LCD_4_SetCursor_Position(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCo
 
 #elif _LCD_Mood ==  _LCD_8_Bit_Mood
 
+/**
+  * @brief  : Static Function To Send Enable Signal
+  * @param  : CopyLCD
+  */
 static void LCD_8_SendEnable_Signal(LCD_8_MODE CopyLCD)
 {
 	Dio_setPinVal(CopyLCD.E,Status_Pin_High);
@@ -230,6 +359,12 @@ static void LCD_8_SendEnable_Signal(LCD_8_MODE CopyLCD)
 	Dio_setPinVal(CopyLCD.E, Status_Pin_Low);
 }
 
+/**
+  * @brief  : Static Function To Set Cursor in LCD 8 Bit Mode
+  * @param  : CopyLCD
+  * @param  : CopyRow
+  * @param  : CopyCoulmn
+  */
 static void LCD_8_SetCursor_Position(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCoulmn)
 {
 	CopyCoulmn--;
@@ -241,4 +376,5 @@ static void LCD_8_SetCursor_Position(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCo
 		default: break;
 	}
 }
+
 #endif
