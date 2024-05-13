@@ -8,59 +8,55 @@
 /********** SECTION : Includes **********/
 #include "KeyPad_Init.h"
 
+
+extern u8 Pattern[NO_ROW][NO_COL];
+extern u8 Row_Pin[NO_ROW];
+extern u8 Col_Pin[NO_COL];
 /********** SECTION : Functions Definitions **********/
 
 /**
   * @brief  : Initialization KeyPad Pins
   * @param  : CopyKeyPad
   */
-void KeyPad_Init(KeyPad CopyKeyPad)
+void keypad_vidInit()
 {
-	u8 Rows_Counter = Initial_Counter ;
-	u8 Columns_Counter = Initial_Counter;
-
-	for(Rows_Counter = Initial_Counter ; Rows_Counter < KeyPad_Rows; Rows_Counter++)
-	{
-		Dio_setPinDir(CopyKeyPad.Pins_Row[Rows_Counter],Direction_Pin_Output);
-//		Dio_setPinVal(CopyKeyPad.Pins_Row[Rows_Counter], Status_Pin_Low);
-	}
-
-	for(Columns_Counter = Initial_Counter ; Columns_Counter < KeyPad_Coulmn; Columns_Counter++)
-	{
-		Dio_setPinDir(CopyKeyPad.Pins_Coulmn[Columns_Counter],Direction_Pin_Input);
-	}
+	DIO_vidSetPinSDir(Row_Pin,NO_ROW,Direction_Pin_Input);
+	DIO_vidSetPinSDir(Col_Pin,NO_COL,Direction_Pin_Output);
+	DIO_vidSetPinSVal(Row_Pin,NO_ROW,Status_Pin_High);
+	DIO_vidSetPinSVal(Col_Pin,NO_COL,Status_Pin_High);
 }
+
 
 /**
   * @brief  : Get Value From KeyPad Pins And Store It In CopyValue
   * @param  : CopyKeyPad
   * @param  : CopyValue
   */
-void KeyPad_getValue(KeyPad CopyKeyPad, u8 *CopyValue)
+u8 keypad_u8Stat(u8 *ptr)
 {
-	u8 Rows_Counter = Initial_Counter ;
-	u8 Columns_Counter = Initial_Counter;
-	u8 Counter_1 = Initial_Counter;
-	u8 Logic_Value = Initial_Counter;
-
-	for(Rows_Counter = Initial_Counter ; Rows_Counter < KeyPad_Rows; Rows_Counter++)
+	u8 i , j;
+	u8 flag = 0;
+	for(i = 0 ; i < 4 ; i++)
 	{
-		for(Counter_1 = Initial_Counter ; Counter_1 < KeyPad_Rows ; Counter_1++)
+		Dio_setPinVal(Col_Pin[i],Status_Pin_Low);
+		for(j=0;j<4;j++)
 		{
-			Dio_setPinVal(CopyKeyPad.Pins_Row[Counter_1], Status_Pin_Low);
-		}
-
-		Dio_setPinVal(CopyKeyPad.Pins_Row[Rows_Counter], Status_Pin_High);
-		_delay_ms(50);
-		for(Columns_Counter = Initial_Counter ; Columns_Counter < KeyPad_Coulmn; Columns_Counter++)
-		{
-			Dio_getPinVal(CopyKeyPad.Pins_Coulmn[Columns_Counter]);
-			_delay_ms(50);
-
-			if(Logic_Value == Status_Pin_High)
+			if(Dio_getPinVal(Row_Pin[j]) == 0)
 			{
-				*CopyValue = &(Keypad_Buttons[Rows_Counter][Columns_Counter]);
+				*ptr = Pattern[j][i];
+				flag=1;
+//				_delay_ms(20);
+				while(Dio_getPinVal(Row_Pin[j])==0);
+//				if(DIO_u8GetPinVal(Row_Pin[j]) == 0)
+//				{
+//					*ptr = Pattern[j][i];
+//				}
+				_delay_ms(20);
+				Dio_setPinVal(Col_Pin[i],Status_Pin_High);
+				return flag;
 			}
 		}
+		Dio_setPinVal(Col_Pin[i],Status_Pin_High);
 	}
+	return flag;
 }

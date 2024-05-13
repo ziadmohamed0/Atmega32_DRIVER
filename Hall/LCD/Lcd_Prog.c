@@ -340,8 +340,8 @@ static void LCD_4_SetCursor_Position(LCD_4_MODE CopyLCD , u8 CopyRow , u8 CopyCo
 	switch (CopyRow) {
 		case Row_1 : LCD_4_CMD_Write(CopyLCD, (0x80 + CopyCoulmn)); break;
 		case Row_2 : LCD_4_CMD_Write(CopyLCD, (0xc0 + CopyCoulmn)); break;
-		case Row_3 : LCD_4_CMD_Write(CopyLCD, (0x90 + CopyCoulmn)); break;
-		case Row_4 : LCD_4_CMD_Write(CopyLCD, (0xd0 + CopyCoulmn)); break;
+		case Row_3 : LCD_4_CMD_Write(CopyLCD, (0x94 + CopyCoulmn)); break;
+		case Row_4 : LCD_4_CMD_Write(CopyLCD, (0xd4 + CopyCoulmn)); break;
 		default: break;
 	}
 }
@@ -371,8 +371,8 @@ static void LCD_8_SetCursor_Position(LCD_8_MODE CopyLCD , u8 CopyRow , u8 CopyCo
 	switch (CopyRow) {
 		case Row_1 : LCD_8_CMD_Write(CopyLCD, (0x80 + CopyCoulmn)); break;
 		case Row_2 : LCD_8_CMD_Write(CopyLCD, (0xc0 + CopyCoulmn)); break;
-		case Row_3 : LCD_8_CMD_Write(CopyLCD, (0x90 + CopyCoulmn)); break;
-		case Row_4 : LCD_8_CMD_Write(CopyLCD, (0xd0 + CopyCoulmn)); break;
+		case Row_3 : LCD_8_CMD_Write(CopyLCD, (0x94 + CopyCoulmn)); break;
+		case Row_4 : LCD_8_CMD_Write(CopyLCD, (0xd4 + CopyCoulmn)); break;
 		default: break;
 	}
 }

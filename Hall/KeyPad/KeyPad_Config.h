@@ -12,17 +12,16 @@
 #include "../../Mcal/DIO/dio_Init.h"
 
 /********** SECTION : Pins Size **********/
-#define KeyPad_Rows		4
-#define KeyPad_Coulmn	4
+#define NO_ROW    (u8)4
+#define NO_COL    (u8)4
 
 /********** SECTION : Pins **********/
-typedef struct {
-	u8 Pins_Row[KeyPad_Rows];
-	u8 Pins_Coulmn[KeyPad_Coulmn];
-}KeyPad;
+//typedef struct {
+//	u8 Pins_Row[NO_ROW];
+//	u8 Pins_Coulmn[NO_COL];
+//}KeyPad;
 
 /********** SECTION : KeyPad Configurations **********/
-KeyPad KeyPad_1;
-u8 Keypad_Buttons[KeyPad_Rows][KeyPad_Coulmn];
+//KeyPad Keypad_Buttons[NO_ROW][NO_COL];
 
 #endif /* HALL_KEYPAD_KEYPAD_CONFIG_H_ */

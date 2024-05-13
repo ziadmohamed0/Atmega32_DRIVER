@@ -9,8 +9,8 @@
 #include "Initialize_Init.h"
 
 /********** SECTION : Global Area **********/
-	u8 Temp_str[10] ;
-	u8 Temp ;
+
+
 /********** SECTION : Functions setUp Definitions **********/
 
 /**
@@ -19,14 +19,14 @@
 void App_Init(void)
 {
 
-
 }
 /********** SECTION : Functions Loop Definitions **********/
-
 /**
 * @brief  : Function to Looping My Program
 */
 void App_Loop(void)
 {
 
+
 }
+

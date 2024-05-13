@@ -28,12 +28,12 @@ LCD_8_MODE LCD8 = {
 
 LCD_4_MODE LCD4 = {
 
-		.Port[0] = PortB_p4,
-		.Port[1] = PortB_p5,
-		.Port[2] = PortB_p6,
-		.Port[3] = PortB_p7,
-		.RS = PortB_p2,
-		.E  = PortB_p3,
+		.Port[0] = PortA_p4,
+		.Port[1] = PortA_p5,
+		.Port[2] = PortA_p6,
+		.Port[3] = PortA_p7,
+		.RS = PortA_p0,
+		.E  = PortA_p1,
 };
 
 #endif

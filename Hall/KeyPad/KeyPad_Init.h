@@ -17,13 +17,13 @@
   * @brief  : Initialization KeyPad Pins
   * @param  : CopyKeyPad
   */
-void KeyPad_Init(KeyPad CopyKeyPad);
+void keypad_vidInit();
 
 /**
   * @brief  : Get Value From KeyPad Pins And Store It In CopyValue
   * @param  : CopyKeyPad
   * @param  : CopyValue
   */
-void KeyPad_getValue(KeyPad CopyKeyPad, u8 *CopyValue);
+u8 keypad_u8Stat(u8 *ptr);
 
 #endif /* HALL_KEYPAD_KEYPAD_INIT_H_ */
