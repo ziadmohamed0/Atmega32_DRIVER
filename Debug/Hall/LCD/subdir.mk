@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Hall/LCD/Lcd_Config.c \
-../Hall/LCD/Lcd_Prog.c 
+../Hall/LCD/LCD_Config.c \
+../Hall/LCD/LCD_Prog.c 
 
 OBJS += \
-./Hall/LCD/Lcd_Config.o \
-./Hall/LCD/Lcd_Prog.o 
+./Hall/LCD/LCD_Config.o \
+./Hall/LCD/LCD_Prog.o 
 
 C_DEPS += \
-./Hall/LCD/Lcd_Config.d \
-./Hall/LCD/Lcd_Prog.d 
+./Hall/LCD/LCD_Config.d \
+./Hall/LCD/LCD_Prog.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

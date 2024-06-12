@@ -14,6 +14,9 @@
 #include "../../Serv/Bit_Math.h"
 #include "../../Serv/Includes.h"
 #include "../ADC/ADC_Init.h"
+#include "../UART/UART_Init.h"
+#include "../TIMER0/TIMER0_Init.h"
+
 
 /* -------------------- Section : Enums -------------------- */
 /* ========== Enum for Pins ========== */

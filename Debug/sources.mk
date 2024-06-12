@@ -29,4 +29,6 @@ Hall/LCD \
 Mcal/ADC \
 Mcal/DIO \
 Mcal/EX_Intrrupt \
+Mcal/TIMER0 \
+Mcal/UART \
 

@@ -10,6 +10,10 @@
 
 
 /* -------------------- Section : Interrupt -------------------- */
+#define ISR(vector)            \
+    void vector (void)  __attribute__ ((signal,used,externally_visible)); \
+    void vector (void)
+
 #define ADC_Vector	__vector_16
 
 /* -------------------- Section : Registers -------------------- */

@@ -8,6 +8,21 @@
 /* -------------------- Section : Includes -------------------- */
 #include "EX_Init.h"
 #include "../DIO/dio_Init.h"
+
+/* -------------------- Section : ISR FUNCTIONS DEFINITIONS -------------------- */
+ISR(INT0_VECTR)
+{
+	ISR_FUN_INT0();
+}
+ISR(INT1_VECTR)
+{
+	ISR_FUN_INT1();
+}
+ISR(INT2_VECTR)
+{
+	ISR_FUN_INT2();
+}
+
 /* -------------------- Section : Static Functions -------------------- */
 
 /**
@@ -37,7 +52,8 @@ static void EX_ControlIN2(EX_Interrupt_Dir CopyDirIn);
   */
 void EXI_Init(EX_Interrupt_Num CopyNumEXI , EX_Interrupt_Dir CopyDirIn)
 {
-	switch (CopyNumEXI) {
+	switch (CopyNumEXI)
+	{
 		case IN0:
 			SET_BIT(SREG,SREG_GIE);		// Enable General Interrupt Register
 			SET_BIT(GICR , GICR_INT0);	// Enable Local Interrupt Register of INT0
@@ -67,7 +83,8 @@ void EXI_Init(EX_Interrupt_Num CopyNumEXI , EX_Interrupt_Dir CopyDirIn)
   */
 static void EX_ControlIN0(EX_Interrupt_Dir CopyDirIn)
 {
-	switch (CopyDirIn) {
+	switch (CopyDirIn)
+	{
 		case LOW_LEVEL:
 			CLR_BIT(MCUCR , MCUCR_ISC11);
 			CLR_BIT(MCUCR , MCUCR_ISC10);

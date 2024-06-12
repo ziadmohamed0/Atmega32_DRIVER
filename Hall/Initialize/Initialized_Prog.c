@@ -9,7 +9,8 @@
 #include "Initialize_Init.h"
 
 /********** SECTION : Global Area **********/
-
+u8 Var;
+u8 data;
 
 /********** SECTION : Functions setUp Definitions **********/
 
@@ -18,7 +19,11 @@
 */
 void App_Init(void)
 {
-
+	UART_init(BAUD_9600);
+	LCD_init(LCD);
+//	LCD_writeChar(LCD,'x');
+//	LCD_goTo(LCD, ROW2, 1);
+//	LCD_writeChar(LCD,'z');
 }
 /********** SECTION : Functions Loop Definitions **********/
 /**
@@ -26,7 +31,14 @@ void App_Init(void)
 */
 void App_Loop(void)
 {
+	if(UART_reciveData(&Var))
+	{
+		LCD_writeChar(LCD, Var);
+	}
+	else
+	{
 
-
+	}
+	_delay_ms(200);
 }
 

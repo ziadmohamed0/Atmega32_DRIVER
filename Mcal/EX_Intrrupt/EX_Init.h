@@ -13,7 +13,7 @@
 
 /* -------------------- Section : ISR Macros Like Functions -------------------- */
 #define ISR(vector)            \
-    void vector (void)  __attribute__ ((signal,used, externally_visible)); \
+    void vector (void)  __attribute__ ((signal,used,externally_visible)); \
     void vector (void)
 
 /* -------------------- Section : External Interrupt Vectors -------------------- */
@@ -22,7 +22,9 @@
 #define INT2_VECTR    __vector_3
 
 /* -------------------- Section : Functions -------------------- */
-
+void (*ISR_FUN_INT0)(void);
+void (*ISR_FUN_INT1)(void);
+void (*ISR_FUN_INT2)(void);
 /**
   * @brief  : Initialization External Interrupt
   * @param  : CopyNumEXI

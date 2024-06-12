@@ -9,7 +9,6 @@
 #define MCAL_ADC_ADC_CONFIG_H_
 
 /* -------------------- Section : Includes -------------------- */
-#include "../EX_Intrrupt/EX_Init.h"
 #include "ADC_Reg.h"
 
 /* -------------------- Section : Voltage Reference Configuration -------------------- */

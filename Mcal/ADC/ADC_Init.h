@@ -28,6 +28,10 @@ typedef enum
 }ADC_CHANNEL;
 
 /* -------------------- Section : Functions -------------------- */
+/**
+  * @brief  : Interrupt Functions
+  */
+void (*ADC_INT)(void);
 
 /**
   * @brief  : Initialization ADC
@@ -65,5 +69,8 @@ void ADC_DisableINT(void);
   * @brief  : Clear The ADCSRA_ADIF Bit
   */
 void ADC_CLRflag(void);
+
+
+
 
 #endif /* MCAL_ADC_ADC_INIT_H_ */

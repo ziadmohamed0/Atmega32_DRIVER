@@ -85,8 +85,10 @@ Std_Return Dio_getPinVal(u8 CopyPinNum)
 void DIO_vidSetPinSDir(u8 * u8PinsNum,u8 Copyu8Size,u8 Copyu8Dir)
 {
 	u8 i;
-	for(i=0;i<Copyu8Size;i++){
-		switch (Copyu8Dir){
+	for(i=0;i<Copyu8Size;i++)
+	{
+		switch (Copyu8Dir)
+		{
 		case Direction_Pin_Input  :CLR_BIT((*Arr_DDr[u8PinsNum[i] / 8]), (u8PinsNum[i] % 8));break;
 		case Direction_Pin_Output :SET_BIT((*Arr_DDr[u8PinsNum[i] / 8]), (u8PinsNum[i] % 8));break;
 		}
@@ -102,8 +104,10 @@ void DIO_vidSetPinSDir(u8 * u8PinsNum,u8 Copyu8Size,u8 Copyu8Dir)
 void DIO_vidSetPinSVal(u8 * u8PinsNum,u8 Copyu8Size,u8 Copyu8Val)
 {
 	u8 i;
-	for(i=0;i<Copyu8Size;i++){
-		switch (Copyu8Val){
+	for(i=0;i<Copyu8Size;i++)
+	{
+		switch (Copyu8Val)
+		{
 		case Status_Pin_Low  :CLR_BIT(*Arr_Port[u8PinsNum[i] / 8], u8PinsNum[i] % 8);break;
 		case Status_Pin_High :SET_BIT(*Arr_Port[u8PinsNum[i] / 8], u8PinsNum[i] % 8);break;
 		}
