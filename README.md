@@ -7,17 +7,18 @@ This repository contains a comprehensive suite of drivers for the ATmega32 micro
 ## Folder Structure
 
 - **Hall**: This folder contains higher abstraction layer drivers.
-  - `lcd`: Driver for interfacing with LCD displays.
-  - `bcd`: Driver for interfacing with 7-Segment displays.
-  - `ultrasonic`: Driver for ultrasonic distance measurement.
-  - `keypad`: Driver for matrix keypad interfacing.
-  - `dc_Motor`: Driver for controlling DC motors.
-  - `Initialize`: Driver for Connects all interfaces together.
+  - `LCD`: Driver for interfacing with LCD displays.
+  - `BCD`: Driver for interfacing with 7-Segment displays.
+  - `KEYPAD`: Driver for matrix keypad interfacing.
+  - `L298_DC_MOTOR`: Driver for controlling DC motors.
+  - `INIT`: Driver for Connects all interfaces together.
 
 - **Mcal**: Microcontroller abstraction layer drivers.
   - `ADC`: Analog-to-digital converter driver.
   - `DIO`: Digital Input/Output driver.
-  - `EX_Interrupt`: External interrupt handling driver.
+  - `INTERRUPT`: External interrupt handling driver.
+  - `TIMER0`: Timer0 handling driver.
+  - `UART`: UART handling driver.
 
 - **Serv**: Service layer with common utilities and data types.
   - `BIT_Math`: Bit manipulation macros.
