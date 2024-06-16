@@ -8,17 +8,17 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Mcal/UART/subdir.mk
--include Mcal/TIMER0/subdir.mk
--include Mcal/EX_Intrrupt/subdir.mk
--include Mcal/DIO/subdir.mk
--include Mcal/ADC/subdir.mk
--include Hall/LCD/subdir.mk
--include Hall/KeyPad/subdir.mk
--include Hall/Initialize/subdir.mk
--include Hall/DC_Motor/subdir.mk
--include Hall/BCD/subdir.mk
--include App/subdir.mk
+-include MCAL/UART/subdir.mk
+-include MCAL/TIMER0/subdir.mk
+-include MCAL/INTERRUPT/subdir.mk
+-include MCAL/DIO/subdir.mk
+-include MCAL/ADC/subdir.mk
+-include HALL/LCD/subdir.mk
+-include HALL/L298_DC_MOTOR/subdir.mk
+-include HALL/KEYPAD/subdir.mk
+-include HALL/INIT/subdir.mk
+-include HALL/BCD/subdir.mk
+-include APP/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -45,17 +45,17 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Driver_Atmega32
+BUILD_ARTIFACT_NAME := ATMEGA32
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-Driver_Atmega32.lss \
+ATMEGA32.lss \
 
 FLASH_IMAGE += \
-Driver_Atmega32.hex \
+ATMEGA32.hex \
 
 SIZEDUMMY += \
 sizedummy \
@@ -65,37 +65,37 @@ sizedummy \
 all: main-build
 
 # Main-build Target
-main-build: Driver_Atmega32.elf secondary-outputs
+main-build: ATMEGA32.elf secondary-outputs
 
 # Tool invocations
-Driver_Atmega32.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+ATMEGA32.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,Driver_Atmega32.map -mmcu=atmega16 -o "Driver_Atmega32.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,ATMEGA32.map -mmcu=atmega16 -o "ATMEGA32.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Driver_Atmega32.lss: Driver_Atmega32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+ATMEGA32.lss: ATMEGA32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S Driver_Atmega32.elf  >"Driver_Atmega32.lss"
+	-avr-objdump -h -S ATMEGA32.elf  >"ATMEGA32.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Driver_Atmega32.hex: Driver_Atmega32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+ATMEGA32.hex: ATMEGA32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Driver_Atmega32.elf  "Driver_Atmega32.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ATMEGA32.elf  "ATMEGA32.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: Driver_Atmega32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+sizedummy: ATMEGA32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega16 Driver_Atmega32.elf
+	-avr-size --format=avr --mcu=atmega16 ATMEGA32.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Driver_Atmega32.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) ATMEGA32.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)

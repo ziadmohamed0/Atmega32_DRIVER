@@ -20,15 +20,15 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-App \
-Hall/BCD \
-Hall/DC_Motor \
-Hall/Initialize \
-Hall/KeyPad \
-Hall/LCD \
-Mcal/ADC \
-Mcal/DIO \
-Mcal/EX_Intrrupt \
-Mcal/TIMER0 \
-Mcal/UART \
+APP \
+HALL/BCD \
+HALL/INIT \
+HALL/KEYPAD \
+HALL/L298_DC_MOTOR \
+HALL/LCD \
+MCAL/ADC \
+MCAL/DIO \
+MCAL/INTERRUPT \
+MCAL/TIMER0 \
+MCAL/UART \
 
