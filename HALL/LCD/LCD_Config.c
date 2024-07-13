@@ -10,8 +10,9 @@
 /*********** LCDS ***********/
 #if (_LCD_MODE == _8_BIT_MODE_LCD)
 PINS_LCD LCD = {
-				.PORT_DATA_PIN_NUM = _PORTB,			.EN = PINA0,
+				.PORT_DATA_PIN_NUM = _PORTB,
 				.RS = PINA1,
+				.EN = PINA0,
 				.D[0] = PINB0,
 				.D[1] = PINB1,
 				.D[2] = PINB2,
@@ -23,11 +24,11 @@ PINS_LCD LCD = {
 				};
 #elif (_LCD_MODE == _4_BIT_MODE_LCD)
 PINS_LCD LCD = {
-				.EN   = PINB1,
-				.RS   = PINB0,
-				.D[0] = PINB2,
-				.D[1] = PINB3,
-				.D[2] = PINB4,
-				.D[3] = PINB5,
+				.RS   = PINC0,
+				.EN   = PINC1,
+				.D[0] = PINC2,
+				.D[1] = PINC3,
+				.D[2] = PINC4,
+				.D[3] = PINC5,
 				};
 #endif

@@ -9,9 +9,9 @@
 
 /*********** BCD ***********/
 _BCD_PINS_	_7_SEGMENT = {
-						  .ENABLE_PIN = PINB0,
-						  .PIN1 = PINB1 ,
-						  .PIN2 = PINB2 ,
-						  .PIN3 = PINB3 ,
-						  .PIN4 = PINB4
+						  .ENABLE_PIN = PINC7,
+						  .PIN1 = PINC0 ,
+						  .PIN2 = PINC1 ,
+						  .PIN3 = PINC2 ,
+						  .PIN4 = PINC3
 						 };

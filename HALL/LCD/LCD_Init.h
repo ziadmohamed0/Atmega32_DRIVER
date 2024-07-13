@@ -130,5 +130,12 @@ void LCD_writeNum_u16Position(PINS_LCD copyLCDNum, ROW_NUM copyRow, uint_8 copyC
  */
 void LCD_writeNum_u8Position(PINS_LCD copyLCDNum, ROW_NUM copyRow, uint_8 copyColumn,uint_8 *copyNum);
 
+/**
+ * @brief  : LCD function go to any where in LCD .
+ * @param1 : copyLCDNum
+ * @param2 : copyNum
+ * @retVal : void
+ */
+void LCD_GoTo(PINS_LCD copyLCDNum, ROW_NUM copyRow, uint_8 copyColumn);
 
 #endif /* HALL_LCD_LCD_INIT_H_ */

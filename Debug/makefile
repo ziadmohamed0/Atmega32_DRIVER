@@ -9,14 +9,18 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include MCAL/UART/subdir.mk
+-include MCAL/TIMER2/subdir.mk
+-include MCAL/TIMER1/subdir.mk
 -include MCAL/TIMER0/subdir.mk
+-include MCAL/SPI/subdir.mk
 -include MCAL/INTERRUPT/subdir.mk
+-include MCAL/I2C/subdir.mk
 -include MCAL/DIO/subdir.mk
 -include MCAL/ADC/subdir.mk
+-include HALL/RELAY/subdir.mk
 -include HALL/LCD/subdir.mk
 -include HALL/L298_DC_MOTOR/subdir.mk
 -include HALL/KEYPAD/subdir.mk
--include HALL/INIT/subdir.mk
 -include HALL/BCD/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
@@ -71,7 +75,7 @@ main-build: ATMEGA32.elf secondary-outputs
 ATMEGA32.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,ATMEGA32.map -mmcu=atmega16 -o "ATMEGA32.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,ATMEGA32.map -mmcu=atmega32 -o "ATMEGA32.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -89,7 +93,7 @@ ATMEGA32.hex: ATMEGA32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 
 sizedummy: ATMEGA32.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega16 ATMEGA32.elf
+	-avr-size --format=avr --mcu=atmega32 ATMEGA32.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

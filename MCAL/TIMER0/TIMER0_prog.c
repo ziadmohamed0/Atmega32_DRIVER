@@ -11,27 +11,41 @@
 /**
  * @brief  : Timer/Counter {0} initialization function by select timer wave mode
  *			 from configuration file.
- * @param1 : void
+ * @param1 : copyPrescaler
  * @retVal : void
  */
-void TIMER0_Init(void)
+void TIMER0_Init(_TIMER0__PRESCALER_SELECT_ copyPrescaler)
 {
-#if TIMER_MODE_WAVE == NORMAL_MODE
-	CLR_BIT(TCCR0,WGM00);
-	CLR_BIT(TCCR0,WGM01);
-#elif TIMER_MODE_WAVE == PWM_MODE
-	SET_BIT(TCCR0,WGM00);
-	CLR_BIT(TCCR0,WGM01);
-	TCCR0 |= TIMER_COMP_OUTPUT_MODE;
-#elif TIMER_MODE_WAVE == CTC_MODE
+#if (_TIMER_MODE_WAVE == _TIMER0_NORMAL_MODE)
+		CLR_BIT(TCCR0,WGM00);
+		CLR_BIT(TCCR0,WGM01);
+		SET_BIT(TCCR0,FOC0);
+#elif (_TIMER_MODE_WAVE == _TIMER0_CTC_MODE)
 	CLR_BIT(TCCR0,WGM00);
 	SET_BIT(TCCR0,WGM01);
-	TCCR0 |= TIMER_COMP_OUTPUT_MODE;
-#elif TIMER_MODE_WAVE == FAST_PWM_MODE
+#elif (_TIMER_MODE_WAVE == _TIMER0_PWM_MODE)
+	SET_BIT(TCCR0,WGM00);
+	CLR_BIT(TCCR0,WGM01);
+#elif (_TIMER_MODE_WAVE == _TIMER0_FAST_PWM_MODE)
 	SET_BIT(TCCR0,WGM00);
 	SET_BIT(TCCR0,WGM01);
-	TCCR0 |= TIMER_COMP_OUTPUT_MODE;
 #endif
+
+#if (_TIMER0_COM_OC0 == _TIMER0_OC0_DISCONNECTED)
+	CLR_BIT(TCCR0,COM01);
+	CLR_BIT(TCCR0,COM00);
+#elif	(_TIMER0_COM_OC0 == _TIMER0_OC0_INVERTING)
+	SET_BIT(TCCR0,COM01);
+	SET_BIT(TCCR0,COM00);
+#elif	(_TIMER0_COM_OC0 == _TIMER0_OC0_NON_INVERTING)
+	SET_BIT(TCCR0,COM01);
+	CLR_BIT(TCCR0,COM00);
+#elif	(_TIMER0_COM_OC0 == _TIMER0_OC0_TOGGLE)
+	CLR_BIT(TCCR0,COM01);
+	SET_BIT(TCCR0,COM00);
+#endif
+	TCCR0 &= TIMER0_CLOCK_STOP ;
+	TCCR0 |= copyPrescaler;
 }
 
 /**
@@ -39,9 +53,9 @@ void TIMER0_Init(void)
  * @param1 : void
  * @retVal : void
  */
-void TIMER0_Start(void)
+void TIMER0_Start(_TIMER0__PRESCALER_SELECT_ copyPrescaler)
 {
-	TCCR0 |= _PRESCALER_SELECT_;
+	TCCR0 |= copyPrescaler;
 }
 
 /**

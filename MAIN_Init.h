@@ -9,6 +9,6 @@
 #define APP_MAIN_INIT_H_
 
 /*********** INCLUDES ***********/
-#include "../HALL/INIT/INIT_Init.h"
+#include "APP/APP_Init.h"
 
 #endif /* APP_MAIN_INIT_H_ */

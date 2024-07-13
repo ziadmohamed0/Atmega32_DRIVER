@@ -1,0 +1,53 @@
+/*
+ * TIMER2_config.h
+ *
+ *  Created on: Jun 30, 2024
+ *      Author: ziad
+ */
+
+#ifndef MCAL_TIMER2_TIMER2_CONFIG_H_
+#define MCAL_TIMER2_TIMER2_CONFIG_H_
+
+/*********** INCLUDES ***********/
+#include "TIMER2_reg.h"
+
+/*********** TIMER MODE ***********/
+#define _TIMER2_NORMAL_MODE 	0U
+#define _TIMER2_CTC_MODE 		1U
+#define _TIMER2_PWM_MODE 		2U
+#define _TIMER2_FAST_PWM_MODE 	3U
+
+#define _TIMER2_MODE_WAVE 	_TIMER2_NORMAL_MODE
+
+/*********** TIMER COMPAR MATCH MODE ***********/
+#define _TIMER2_OC2_DISCONNECTED 	0U
+#define _TIMER2_OC2_TOGGLE 			1U
+#define _TIMER2_OC2_NON_INVERTING 	2U
+#define _TIMER2_OC2_INVERTING 		3U
+
+#define _TIMER2_COM_OC2	_TIMER2_OC2_DISCONNECTED
+
+/*********** TIMER PRESCALER ***********/
+
+	/* --- TIMER2 SELSET PRESCLER --- */
+typedef enum
+{
+	_TIMER2_NO_PRESCLER,
+	_TIMER2_1_PRESCLER,
+	_TIMER2_8_PRESCLER,
+	_TIMER2_64_PRESCLER,
+	_TIMER2_256_PRESCLER,
+	_TIMER2_1024_PRESCLER,
+	_TIMER2_FALLING_PRESCLER,
+	_TIMER2_RISING_PRESCLER
+}_TIMER2_PRESCALER_SELECT_;
+
+#define TIMER2_CLOCK_STOP    (uint_8)0xF8
+
+/*********** TIMER CLOCK SOURCE ***********/
+#define TIEMR2_INT    0U
+#define TIMER2_EXTR   1U
+
+#define TIMER2_CLK_SOURCE  TIMER2_EXTR
+
+#endif /* MCAL_TIMER2_TIMER2_CONFIG_H_ */

@@ -50,7 +50,7 @@ Return_Value KEYPAD_getData(PINS_KEYPAD copyKEYPAD , uint_8 *copyKeypadValue)
 				*copyKeypadValue = PATTIRN_KEYPAD[count2][count1];
 				flag = 1;
 				while(DIO_getPinVAL(copyKEYPAD.ROWS[count2]) == 0);
-				_delay_ms(20);
+				_delay_ms(10);
 				DIO_setPinVAL(copyKEYPAD.COLUMNS[count1],_STATUS_PIN_HIGH);
 				return flag;
 			}

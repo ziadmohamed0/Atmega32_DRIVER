@@ -1,0 +1,47 @@
+/*
+ * TIMER1_config.h
+ *
+ *  Created on: Jun 19, 2024
+ *      Author: ziad
+ */
+
+#ifndef MCAL_TIMER1_TIMER1_CONFIG_H_
+#define MCAL_TIMER1_TIMER1_CONFIG_H_
+
+/************ INCLUDE ***********/
+#include "TIMER1_reg.h"
+
+/*********** TIMER MODE ***********/
+#define _TIMER1_NORMAL_MODE 	0U
+#define _TIMER1_CTC_MODE 		1U
+#define _TIMER1_PWM_MODE 		2U
+#define _TIMER1_FAST_PWM_MODE 	3U
+
+#define _TIMER1_MODE_WAVE 	_TIMER1_NORMAL_MODE
+
+/*********** TIMER COMPAR MATCH MODE ***********/
+#define _TIMER1_OC1_DISCONNECTED 	0U
+#define _TIMER1_OC1_TOGGLE 			1U
+#define _TIMER1_OC1_NON_INVERTING 	2U
+#define _TIMER1_OC1_INVERTING 		3U
+
+#define _TIMER1_COM_OC1	_TIMER1_OC1_DISCONNECTED
+
+/*********** TIMER PRESCALER ***********/
+
+	/* --- TIMER SELSET PRESCLER --- */
+typedef enum
+{
+	_TIMER1_NO_PRESCLER,
+	_TIMER1_1_PRESCLER,
+	_TIMER1_8_PRESCLER,
+	_TIMER1_64_PRESCLER,
+	_TIMER1_256_PRESCLER,
+	_TIMER1_1024_PRESCLER,
+	_TIMER1_FALLING_PRESCLER,
+	_TIMER1_RISING_PRESCLER
+}_TIMER1__PRESCALER_SELECT_;
+
+#define TIMER1_CLOCK_STOP    (uint_8)0xF8
+
+#endif /* MCAL_TIMER1_TIMER1_CONFIG_H_ */

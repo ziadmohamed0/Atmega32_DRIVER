@@ -9,9 +9,15 @@
 
 
 /*********** FUNCTIONS DEFIN ***********/
+/**
+ * @brief  : UART initialization function by put baud rate you need
+ * 			 and select your configurations from configurations file.
+ * @param1 : copyBaudRate
+ * @retVal : void
+ */
 void UART_init(BAUD_RATE copyBaudRate)
 {
-//	UBRRH = (copyBaudRate >> 8);
+	UBRRH = (copyBaudRate >> 8);
 	UBRRL = copyBaudRate;
 
 	/* ----- SYNCH MODE ----- */
@@ -64,27 +70,45 @@ void UART_init(BAUD_RATE copyBaudRate)
 	 SET_BIT(UCSRB,RXEN);
 }
 
+/**
+ * @brief  : UART send data functions to send data from MCU to any device
+ * 			 communicated with MCU UART.
+ * @param1 : copyData
+ * @retVal : void
+ */
 void UART_sendData(uint_16 copyData)
 {
 	while(GET_BIT(UCSRA,UDRE) == 0);
 	UDR = copyData;
 }
 
-uint_8 UART_reciveData(uint_8 *copyVar)
+/**
+ * @brief  : UART receive data functions to receive data from any device
+ * 			 communicated with MCU UART.
+ * @param1 : copyVar
+ * @retVal : Ret1
+ */
+uint_8 UART_receiveData(uint_8 *copyVar)
 {
-	uint_8 Ret = 0;
+	uint_8 Ret1 = 0;
 	if(GET_BIT(UCSRA,RXC))
 	{
 		*copyVar = UDR;
-		Ret = 1;
+		Ret1 = 1;
 	}
 	else
 	{
-		Ret = 0;
+		Ret1 = 0;
 	}
-	return Ret;
+	return Ret1;
 }
 
+/**
+ * @brief  : UART receive data functions to receive data from any device
+ * 			 communicated with MCU UART (polling).
+ * @param1 : copyVar
+ * @retVal : UDR
+ */
 uint_8 UART_reciveDataBlock(void)
 {
 	while(GET_BIT(UCSRA,RXC) == 0);

@@ -10,12 +10,12 @@
 
 PINS_MOTORS MOTOR1 =
 {
-		.motor[0] = PINA0,
-		.motor[1] = PINA1,
+		.motor[0] = PINB0,
+		.motor[1] = PINB1,
 };
 
 PINS_MOTORS MOTOR2 =
 {
-		.motor[0] = PINA2,
-		.motor[1] = PINA3,
+		.motor[0] = PINB2,
+		.motor[1] = PINB3,
 };

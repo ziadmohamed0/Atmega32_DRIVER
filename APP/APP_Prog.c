@@ -5,7 +5,9 @@
  *      Author: ziad
  */
 /*********** INCLUDES ***********/
-#include "INIT_Init.h"
+#include "APP_Init.h"
+
+/*********** MACROS ***********/
 
 /*********** GLOBAL AREA ***********/
 
@@ -30,3 +32,5 @@ void Loop(void)
 {
 
 }
+
+

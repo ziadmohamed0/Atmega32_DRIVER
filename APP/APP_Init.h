@@ -9,11 +9,11 @@
 #define HALL_INIT_INIT_INIT_H_
 
 /*********** INCLUDES ***********/
-#include "../../MCAL/DIO/DIO_Init.h"
-#include "../BCD/BCD_Init.h"
-#include "../KEYPAD/KEYPAD_Init.h"
-#include "../LCD/LCD_Init.h"
-#include "../L298_DC_MOTOR/L298_DC_MOTOR_init.h"
+#include "../HALL/BCD/BCD_Init.h"
+#include "../HALL/KEYPAD/KEYPAD_Init.h"
+#include "../HALL/L298_DC_MOTOR/L298_DC_MOTOR_init.h"
+#include "../HALL/LCD/LCD_Init.h"
+#include "../HALL/RELAY/RELAY_init.h"
 
 /*********** FUNCTIONS DECLER ***********/
 /**

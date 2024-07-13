@@ -15,17 +15,17 @@
 /**
  * @brief  : Timer/Counter {0} initialization function by select timer wave mode
  *			 from configuration file.
- * @param1 : void
+ * @param1 : copyPrescaler
  * @retVal : void
  */
-void TIMER0_Init(void);
+void TIMER0_Init(_TIMER0__PRESCALER_SELECT_ copyPrescaler);
 
 /**
  * @brief  : Timer/Counter {0} Start counting by select prescaler from configuration file.
- * @param1 : void
+ * @param1 : copyPrescaler
  * @retVal : void
  */
-void TIMER0_Start(void);
+void TIMER0_Start(_TIMER0__PRESCALER_SELECT_ copyPrescaler);
 
 /**
  * @brief  : Timer/Counter {0} Stop counting.

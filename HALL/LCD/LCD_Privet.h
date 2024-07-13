@@ -34,7 +34,7 @@ typedef enum
 #define LM04L_LCD	1
 #define LM32L_LCD	2
 
-#define _Rows_LCD_TYPE LM044_LCD
+#define _Rows_LCD_TYPE LM32L_LCD
 
 #if (_Rows_LCD_TYPE == LM044_LCD)
 typedef enum

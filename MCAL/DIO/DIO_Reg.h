@@ -9,12 +9,13 @@
 #define MCAL_DIO_DIO_REG_H_
 
 /*********** INCLUDES ***********/
-#include "../../SERV/LIB/Includes.h"
-#include "../../SERV/LIB/Std_Types.h"
-#include "../../SERV/LIB/Bit_Math.h"
-#include "../ADC/ADC_init.h"
-#include "../UART/UART_Init.h"
-#include "../TIMER0/TIMER0_init.h"
+#include "../ADC/ADC_init.h"		 // ADC Driver
+#include "../TIMER0/TIMER0_init.h"	 // Timer0 Driver
+#include "../TIMER1/TIMER1_init.h"   // Timer1 Driver
+#include "../TIMER2/TIMER2_init.h"	 // Timer2 Driver
+#include "../UART/UART_Init.h"		 // UART Driver
+#include "../SPI/SPI_init.h"		 // SPI Driver
+#include "../I2C/I2C_init.h"		 // I2C Driver
 
 	/* ----- DDRx REGISTERS ----- */
 #define DDRA  ( (volatile uint_8 *)   0x3A)

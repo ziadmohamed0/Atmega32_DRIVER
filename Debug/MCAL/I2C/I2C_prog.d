@@ -1,0 +1,119 @@
+MCAL/I2C/I2C_prog.o: ../MCAL/I2C/I2C_prog.c ../MCAL/I2C/I2C_init.h \
+ ../MCAL/I2C/I2C_config.h ../MCAL/I2C/I2C_reg.h \
+ ../MCAL/I2C/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/INTERRUPT_config.h \
+ ../MCAL/I2C/../INTERRUPT/INTERRUPT_reg.h \
+ ../MCAL/I2C/../INTERRUPT/INTERRUPT_vec.h \
+ ../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Includes.h \
+ ../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Std_Types.h \
+ ../MCAL/I2C/../INTERRUPT/../../SERV/LIB/../LIB/Bit_Math.h \
+ ../MCAL/I2C/../INTERRUPT/../../SERV/LIB/../LIB/Includes.h \
+ ../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Bit_Math.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/DIO_Init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/DIO_Config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/DIO_Reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../ADC/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../UART/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_config.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_reg.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../SPI/../INTERRUPT/INTERRUPT_init.h \
+ ../MCAL/I2C/../INTERRUPT/../DIO/../I2C/I2C_init.h
+
+../MCAL/I2C/I2C_init.h:
+
+../MCAL/I2C/I2C_config.h:
+
+../MCAL/I2C/I2C_reg.h:
+
+../MCAL/I2C/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/INTERRUPT_config.h:
+
+../MCAL/I2C/../INTERRUPT/INTERRUPT_reg.h:
+
+../MCAL/I2C/../INTERRUPT/INTERRUPT_vec.h:
+
+../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Includes.h:
+
+../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Std_Types.h:
+
+../MCAL/I2C/../INTERRUPT/../../SERV/LIB/../LIB/Bit_Math.h:
+
+../MCAL/I2C/../INTERRUPT/../../SERV/LIB/../LIB/Includes.h:
+
+../MCAL/I2C/../INTERRUPT/../../SERV/LIB/Bit_Math.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/DIO_Init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/DIO_Config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/DIO_Reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../ADC/ADC_reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../ADC/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/TIMER0_reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER0/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/TIMER1_reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER1/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/TIMER2_reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../TIMER2/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../UART/UART_Reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../UART/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_config.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../SPI/SPI_reg.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../SPI/../INTERRUPT/INTERRUPT_init.h:
+
+../MCAL/I2C/../INTERRUPT/../DIO/../I2C/I2C_init.h:

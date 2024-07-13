@@ -88,6 +88,6 @@ typedef	uint_8				Return_Value;
 #define R_Ok		(Return_Value)1
 #define R_Not_Ok	(Return_Value)0
 
-#define Zero_INIT	(uint_8)0
+#define Zero_INIT	0U
 
 #endif
