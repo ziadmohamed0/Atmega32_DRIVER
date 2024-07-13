@@ -11,13 +11,17 @@ This repository contains a comprehensive suite of drivers for the ATmega32 micro
   - `BCD`: Driver for interfacing with 7-Segment displays.
   - `KEYPAD`: Driver for matrix keypad interfacing.
   - `L298_DC_MOTOR`: Driver for controlling DC motors.
-  - `INIT`: Driver for Connects all interfaces together.
+  - `RELAY`: Driver for controlling RELAY.
 
 - **Mcal**: Microcontroller abstraction layer drivers.
   - `ADC`: Analog-to-digital converter driver.
   - `DIO`: Digital Input/Output driver.
   - `INTERRUPT`: External interrupt handling driver.
   - `TIMER0`: Timer0 handling driver.
+  - `TIMER1`: Timer1 handling driver.
+  - `TIMER2`: Timer2 handling driver.
+  - `SPI` : SPI handling driver.
+  - `I2C` : I2C handling driver.
   - `UART`: UART handling driver.
 
 - **Serv**: Service layer with common utilities and data types.
